@@ -380,7 +380,8 @@ public:
             delete[] this->nume;
 
         this->nume = new char[strlen(str) + 1];
-        strcpy_s(this->nume, strlen(str) + 1, str);
+        //strcpy_s(this->nume, strlen(str) + 1, str);
+        strcpy(this -> nume, str);
     }
 
     [[maybe_unused]] [[nodiscard]] const char *getNume() const
