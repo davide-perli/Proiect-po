@@ -494,6 +494,10 @@ void salutare()
             {
                 return lista[index];
             }
+            else
+            {
+                cout<<"Index out of bonds";
+            }
         }
 
 
