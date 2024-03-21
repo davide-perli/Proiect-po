@@ -485,7 +485,7 @@ void salutare()
         }
 
 
-        //Supraincarcarea operatorului [], pentru citirea unui element din vector de la o pozitie data
+        // Supraincarcarea operatorului [], pentru citirea unui element din vector de la o pozitie data
         T& operator [](size_t index)
         {
             if (index < lista.size())
@@ -494,11 +494,13 @@ void salutare()
             }
             else
             {
-                std::cout<<"Index out of bonds";
+                std::cout << "Index out of bounds";
+                // Return a reference to a default-constructed object
+                // This should be modified according to your design requirements
+                static T defaultObject;
+                return defaultObject;
             }
         }
-
-
 
 
     };
