@@ -4,29 +4,11 @@
 #include <vector>
 #include <cstring>
 
-
-
 void salutare()
 {
     std::cout << "========================================================================================================================" << std::endl;
-    std::cout << "\t\t\tBine ";
-    std::cout << "a-ti ";
-    std::cout << "venit ";
-    std::cout << "la ";
-    std::cout << "magazinul ";
-    std::cout << "de ";
-    std::cout << "inghetata ";
-    std::cout << "Pufic";
-    std::cout << "!";
-    std::cout << std::endl;
+    std::cout << "\t\t\tBine a-ti venit la magazinul de inghetata Pufic !" <<std::endl;
     std::cout << "========================================================================================================================"<<std::endl;
-    std::cout << std::endl;
-
-    // Clear the console by printing newlines since system("cls") doesn't work
-    for (int i = 0; i < 13; i++)
-    {
-        std::cout << std::endl;
-    }
 }
 
 enum Arome
@@ -365,7 +347,8 @@ public:
     Angajati(const char* nume, std::string telefon)
     {
         this->nume = new char[strlen(nume) + 1];
-        strcpy_s(this->nume, strlen(nume) + 1, nume);
+        //strcpy_s(this->nume, strlen(nume) + 1, nume);
+        strcpy(this -> nume, nume);
 
         this->telefon = std::move(telefon); //habar nu am ce face, dar scot un warning asa
     }
