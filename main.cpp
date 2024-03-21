@@ -199,7 +199,7 @@ public:
 
     //Getters and setters
 
-    [[maybe_unused]] void setIdClient(short i)//rename idClient for Declaration shadows a field of 'Comanda'warning
+    [[maybe_unused]] void setIdClient(short i)//rename idClient for Declaration shadows a field of 'Comanda' warning
     {
         this->idClient = i;
     }
