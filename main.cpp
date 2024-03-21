@@ -392,6 +392,23 @@ void salutare()
             this->telefon = a.telefon;
         }
 
+        Angajati& operator=(const Angajati& other)
+        {
+            if (this != &other) // Check for self-assignment
+            {
+                // Deallocate existing memory if any
+                delete[] this->nume;
+
+                // Allocate new memory and copy the data
+                this->nume = new char[strlen(other.nume) + 1];
+                strcpy(this->nume, other.nume);
+
+                // Copy other members
+                this->telefon = other.telefon;
+            }
+            return *this;
+        }
+
         //suipraincarcare << , >>
 
         friend std::istream& operator>>(std::istream& is, Angajati& a)
