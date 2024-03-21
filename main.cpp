@@ -687,7 +687,13 @@ void salutare()
         std::cout << "Dati indexul din lista pe care il doriti afisat (0 sau 1) : ";
         std::cin >> indexLista;
         std::cout << std::endl;
-        std::cout << lc[indexLista] << std::endl;
+        if (indexLista >= 0 && indexLista <= 1)
+        {
+            std::cout << lc[indexLista] << std::endl;
+        } else
+        {
+            std::cout << "Index out of bounds" << std::endl;
+        }
         std::cout << std::endl;
         std::cout << "=======================================================================================================================" << std::endl;
         std::cout << std::endl;
