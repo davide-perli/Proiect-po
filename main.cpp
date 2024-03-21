@@ -383,7 +383,15 @@ void salutare()
             //strcpy_s(this->nume, strlen(nume) + 1, nume);
             strcpy(this->nume, nume);
 
-            this->telefon = std::move(telefon); //habar nu am ce face, dar scot un warning asa
+            this->telefon = std::move(telefon);
+        }
+
+        Angajati(const Angajati &a)
+        {
+            this->nume = new char[strlen(a.nume) + 1];
+            strcpy(this->nume, a.nume);
+
+            this->telefon = a.telefon;
         }
 
         //suipraincarcare << , >>
@@ -485,10 +493,6 @@ void salutare()
             if (index < lista.size())
             {
                 return lista[index];
-            }
-            else
-            {
-                cerr << "index out of bounds";
             }
         }
 
