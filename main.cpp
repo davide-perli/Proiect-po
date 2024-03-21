@@ -6,8 +6,6 @@
 #include <algorithm>
 
 
-using namespace std;
-
 void salutare()
 {
     std::cout << "========================================================================================================================" << std::endl;
@@ -454,17 +452,17 @@ void salutare()
     template <typename T> class listaComenzi
     {
     private:
-        vector<T>lista;
+        std::vector<T>lista;
     public:
         //constructor
         listaComenzi() = default;
         //supraincarcare << in STL vector pt afisarea listei de obiecte/comenzi;
-        friend ostream& operator<<(ostream& os, listaComenzi& lc)
+        friend std::ostream& operator<<(std::ostream& os, listaComenzi& lc)
         {
             for (auto i = lc.lista.begin(); i != lc.lista.end(); i++)
             {
                 os << *i;
-                cout << endl;
+                std::cout << std::endl;
             }
             return os;
         }
@@ -496,7 +494,7 @@ void salutare()
             }
             else
             {
-                cout<<"Index out of bonds";
+                std::cout<<"Index out of bonds";
             }
         }
 
@@ -510,185 +508,185 @@ void salutare()
         salutare();
         unsigned int indexLista, nrObj;
         //MAGAZIN
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
-        cout << "Clasa magazin: " << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
-        cout << "Constructor fara parametrii: ";
-        cout << endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
+        std::cout << "Clasa magazin: " << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
+        std::cout << "Constructor fara parametrii: ";
+        std::cout << std::endl;
         Magazin m,m1,m2(Kinder);
-        cin >> m1;
-        cout << endl;
-        cout << m1 << endl;
-        cout << "======================================================================================================================="<<endl;
+        std::cin >> m1;
+        std::cout << std::endl;
+        std::cout << m1 << std::endl;
+        std::cout << "======================================================================================================================="<<std::endl;
         //constructor cu parametrii
-        cout << endl;
-        cout << "Constructor cu parametrii: " << endl;
-        cout << m2 << endl;
-        cout << "=======================================================================================================================" << endl;
+        std::cout << std::endl;
+        std::cout << "Constructor cu parametrii: " << std::endl;
+        std::cout << m2 << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
 
         //getter/setter:
-        cout << endl;
-        cout << "Getter && Setter: "<<endl;
+        std::cout << std::endl;
+        std::cout << "Getter && Setter: "<<std::endl;
 
         m.setArome(Vanilie);
-        cout << endl;
-        cout<<m.getArome()<<endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << std::endl;
+        std::cout<<m.getArome()<<std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //ANGAJATI
         //constructori
-        cout << "Clasa angajati: " << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Clasa angajati: " << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
         Angajati a, a1, a2("Davide", "07243435345");
-        cin >> a1;
-        cout << endl;
-        cout << a1;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
-        cout << a2;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cin >> a1;
+        std::cout << std::endl;
+        std::cout << a1;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
+        std::cout << a2;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //getter/setter
-        cout << "Getter && Setter:" << endl;
+        std::cout << "Getter && Setter:" << std::endl;
         a.setNume("Andrei");
-        cout << endl;
-        cout << a.getNume()<<endl;
+        std::cout << std::endl;
+        std::cout << a.getNume()<<std::endl;
         a.setTelefon("0723574657");
-        cout << a.getTelefon();
-        cout << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << a.getTelefon();
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //CLIENT
         //constructori
-        cout << "Clasa Client: " << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Clasa Client: " << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
         Client c, c1, c2(100, 799), c3(c2), cEgal;
-        cin >> c1;
-        cout << endl;
-        cout << c1;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
-        cout << c2;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cin >> c1;
+        std::cout << std::endl;
+        std::cout << c1;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
+        std::cout << c2;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //operator =
 
         cEgal = c2;
-        cout << "Supraincarcarea lui = pt copiere: " << endl;
-        cout << endl;
-        cout << cEgal;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Supraincarcarea lui = pt copiere: " << std::endl;
+        std::cout << std::endl;
+        std::cout << cEgal;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //getter/setter
-        cout << "Getter && Setter:" << endl;
+        std::cout << "Getter && Setter:" << std::endl;
         c.setIdClient(101);
-        cout << endl;
-        cout << c.getIdClient() << endl;
+        std::cout << std::endl;
+        std::cout << c.getIdClient() << std::endl;
         c.setPret(1699);
-        cout << c.getPret();
-        cout << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << c.getPret();
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //COMANDA
         //constructori
-        cout << "Clasa Comanda: " << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Clasa Comanda: " << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
         Comanda co, co1, co2(102, 201, 900),co3(104,204,800);
-        cin >> co1;
-        cout << endl;
-        cout << co1;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
-        cout << co2;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cin >> co1;
+        std::cout << std::endl;
+        std::cout << co1;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
+        std::cout << co2;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //getter/setter
-        cout << "Getter && Setter:" << endl;
+        std::cout << "Getter && Setter:" << std::endl;
         co.setIdComanda(203);
-        cout << endl;
-        cout << co.getIdComanda() << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << std::endl;
+        std::cout << co.getIdComanda() << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         // operatorul + supraîncărcat ca funcție non-membră
 
         int pretTotal = c1[1] + c2[1] + c3[1];
         std::cout << "Pretul total este de: " << pretTotal << std::endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //LISTACOMENZI
 
-        cout << "Clasa listaComenzi: " << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Clasa listaComenzi: " << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
         listaComenzi<Comanda> lc;
         lc += co1;
         lc += co2;
         lc += co3;
         lc -= co2;
-        cout << "Lista de comenzi a obiectelor co1, co2, co3, fara co2: " << endl;
-        cout << endl;
-        cout << lc;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Lista de comenzi a obiectelor co1, co2, co3, fara co2: " << std::endl;
+        std::cout << std::endl;
+        std::cout << lc;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //operatorul [], pentru citirea unui element din vector de la o pozitie data
 
-        cout << "Supraincarcarea operatorului [] " << endl;
-        cout << endl;
-        cout << "Dati indexul din lista pe care il doriti afisat (0 sau 1) : ";
-        cin >> indexLista;
-        cout << endl;
-        cout << lc[indexLista] << endl;
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << "Supraincarcarea operatorului [] " << std::endl;
+        std::cout << std::endl;
+        std::cout << "Dati indexul din lista pe care il doriti afisat (0 sau 1) : ";
+        std::cin >> indexLista;
+        std::cout << std::endl;
+        std::cout << lc[indexLista] << std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
         //citirea a n elemente
-        cout << "Dati numarul de obiecte (comenzi) ce doriti citite: ";
-        cin >> nrObj;
+        std::cout << "Dati numarul de obiecte (comenzi) ce doriti citite: ";
+        std::cin >> nrObj;
 
         for (unsigned int i = 0; i < nrObj; i++)
         {
-            cin >> co;
-            cout << endl;
-            cout << co;
-            cout << endl;
+            std::cin >> co;
+            std::cout << std::endl;
+            std::cout << co;
+            std::cout << std::endl;
 
         }
-        cout << endl;
-        cout << "=======================================================================================================================" << endl;
-        cout << endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        std::cout << std::endl;
 
     }
