@@ -3,7 +3,6 @@
 #include <utility>
 #include <vector>
 #include <cstring>
-#include <unistd.h>
 #include <algorithm>
 
 
@@ -11,35 +10,10 @@ using namespace std;
 
 void salutare()
 {
-    //usleep(100000);  usleep takes microseconds, so 100 milliseconds = 100000 microseconds (0.1 seconds)
     std::cout << "========================================================================================================================" << std::endl;
-    usleep(300000);
-    std::cout << "\t\t\tBine ";
-    usleep(300000);
-    std::cout << "ati ";
-    usleep(300000);
-    std::cout << "venit ";
-    usleep(300000);
-    std::cout << "la ";
-    usleep(300000);
-    std::cout << "magazinul ";
-    usleep(300000);
-    std::cout << "de ";
-    usleep(300000);
-    std::cout << "inghetata ";
-    usleep(300000);
-    std::cout << "Pufic";
-    usleep(300000);
-    std::cout << "!" << std::endl;
-    usleep(300000);
+    std::cout << "\t\t\tBine ati venit la magazinul de inghetata Pufic!" << std::endl;
     std::cout << std::endl;
     std::cout << "========================================================================================================================" << std::endl;
-
-    //Printez linii noi de cod ca sa scap de mesajul de bunvenit, ca un soi de scroll, ca nu merge cu system("CLS");
-    for (int i = 0; i < 13; ++i) {
-        std::cout << std::endl;
-        usleep(100000);
-    }
 }
 
     enum Arome
