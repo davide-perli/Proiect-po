@@ -4,14 +4,40 @@
 #include <vector>
 #include <cstring>
 #include <algorithm>
-
+#include <unistd.h>
 
 void salutare()
 {
+    // Halting the execution for 100000 Microseconds (0.1 seconds)
     std::cout << "========================================================================================================================" << std::endl;
-    std::cout << "\t\t\tBine ati venit la magazinul de inghetata Pufic!" << std::endl;
+    std::cout << "\t\t\tBine ";
+    usleep(300000);
+    std::cout << "ati ";
+    usleep(300000);
+    std::cout << "venit ";
+    usleep(300000);
+    std::cout << "la ";
+    usleep(300000);
+    std::cout << "magazinul ";
+    usleep(300000);
+    std::cout << "de ";
+    usleep(300000);
+    std::cout << "inghetata ";
+    usleep(300000);
+    std::cout << "Pufic";
+    usleep(300000);
+    std::cout << "!" << std::endl;
+    usleep(300000);
     std::cout << std::endl;
     std::cout << "========================================================================================================================" << std::endl;
+    usleep(3000000);
+
+    //nu pot sa sterg mesajul de bun venit cu system("CLS"); e specific windows, asa ca printez linii noi si mesajul are parte de un efect de "slide" in sus
+    for(int i = 0; i < 13; i++)
+    {
+        std::cout << std::endl;
+        usleep(100000);
+    }
 }
 
     enum Arome
@@ -394,16 +420,13 @@ void salutare()
 
         Angajati& operator=(const Angajati& other)
         {
-            if (this != &other) // Check for self-assignment
+            if (this != &other)
             {
-                // Deallocate existing memory if any
                 delete[] this->nume;
 
-                // Allocate new memory and copy the data
                 this->nume = new char[strlen(other.nume) + 1];
                 strcpy(this->nume, other.nume);
 
-                // Copy other members
                 this->telefon = other.telefon;
             }
             return *this;
@@ -413,7 +436,7 @@ void salutare()
 
         friend std::istream& operator>>(std::istream& is, Angajati& a)
         {
-            const int bufferSize = 100; // Define a buffer size for reading input
+            const int bufferSize = 100;
             char buffer[bufferSize];
             std::cout << "Introduceti numele angajatului: ";
             is >> buffer;
@@ -523,6 +546,7 @@ void salutare()
     {
         //Mesaj de bun venit
         salutare();
+
         unsigned int indexLista, nrObj;
         //MAGAZIN
         std::cout << "=======================================================================================================================" << std::endl;
