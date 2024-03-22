@@ -8,8 +8,8 @@ Comentariile care contin cod sau inlocuiri sunt acolo pentru ca aveam
 warning-uri si a trebuit sa modific codul, dar pentru orice eventualitate
 am vrut sa vad ce am modificat, impreuna cu warinig-urile primite
 
-Am un mesaj de bun venit cu functia void salutare() unde folosesc functia 
-usleep(valoare) din biblioteca unistd.h pentru a crea o animatie simpatica asupra
+Am un mesaj de bun venit cu functia void salutare() unde folosesc functia
+sleep_for(std::chrono::milliseconds(valoare)) din biblioteca thread pentru a crea o animatie simpatica asupra
 mesajului de bun venit
 
 Un enum cu 10 arome disponibile

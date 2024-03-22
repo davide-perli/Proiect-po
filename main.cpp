@@ -4,40 +4,38 @@
 #include <vector>
 #include <cstring>
 #include <algorithm>
-#include <unistd.h>
+#include <thread>
 
 void salutare()
 {
-    // Halting the execution for 100000 Microseconds (0.1 seconds)
     std::cout << "========================================================================================================================" << std::endl;
     std::cout << "\t\t\tBine ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "ati ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "venit ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "la ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "magazinul ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "de ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "inghetata ";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "Pufic";
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << "!" << std::endl;
-    usleep(300000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     std::cout << std::endl;
     std::cout << "========================================================================================================================" << std::endl;
-    usleep(3000000);
+    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
 
-    //nu pot sa sterg mesajul de bun venit cu system("CLS"); e specific windows, asa ca printez linii noi si mesajul are parte de un efect de "slide" in sus
-    for(int i = 0; i < 13; i++)
-    {
+    for (int i = 0; i < 13; i++) {
         std::cout << std::endl;
-        usleep(100000);
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
+
 }
 
     enum Arome
