@@ -472,7 +472,7 @@ void salutare()
         std::vector<T>lista;
     public:
         //constructor
-        listaComenzi() = default;
+        listaComenzi() : lista() {}
         //supraincarcare << in STL vector pt afisarea listei de obiecte/comenzi;
         friend std::ostream& operator<<(std::ostream& os, listaComenzi& lc)
         {
@@ -503,22 +503,18 @@ void salutare()
 
 
         // Supraincarcarea operatorului [], pentru citirea unui element din vector de la o pozitie data
-        T& operator [](size_t index)
-        {
-            if (index < lista.size())
-            {
+        T& operator [](size_t index) {
+            if (index < lista.size()) {
                 return lista[index];
             }
-            else
-            {
-                std::cout << "Index out of bounds";
-                // Return a reference to a default-constructed object
-                // This should be modified according to your design requirements
+            else {
+                std::cerr << "Index out of bounds";
+                // You might want to throw an exception here or handle the error differently
+                // For now, returning a default-constructed object
                 static T defaultObject;
                 return defaultObject;
             }
         }
-
 
     };
     int main()
