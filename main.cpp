@@ -339,7 +339,7 @@ void salutare()
 
         //Getters and setters
 
-        [[maybe_unused]] void setArome(Arome gust)// rename arome for Declaration shadows a field of 'Magazin' warning
+        [[maybe_unused]] void setArome(Arome gust) // rename arome for Declaration shadows a field of 'Magazin' warning
         {
             this->arome = gust;
         }
