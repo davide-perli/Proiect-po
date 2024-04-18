@@ -18,12 +18,12 @@ public:
     // Getter si setter pentru salariu
     [[maybe_unused]] void setSalariu(double d);
 
-    [[maybe_unused]] [[nodiscard]] double getSalariu() const;
+    //[[maybe_unused]] [[nodiscard]] double getSalariu() const;
 
     // Getter si setter pentru numarul de ore lucrate
-    [[maybe_unused]] void setOreLucrate(int lucrate);
+    //[[maybe_unused]] void setOreLucrate(int lucrate);
 
-    [[maybe_unused]] [[nodiscard]] int getOreLucrate() const;
+    //[[maybe_unused]] [[nodiscard]] int getOreLucrate() const;
 
 
     // Suprascrierea operatorului << pentru afișarea informațiilor despre angajați extinși
