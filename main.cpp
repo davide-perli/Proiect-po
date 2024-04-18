@@ -589,7 +589,7 @@ void salutare()
         std::cout << "=======================================================================================================================" << std::endl;
         std::cout << std::endl;
         Angajati a, a1, a2("Davide", "07243435345");
-        AngajatiExtins a3, angajat("John", "1234567890", 2000, 40);;
+        AngajatiExtins a3, angajat("John", "1234567890", 2000, 40);
         std::cin >> a3;
         std::cout << std::endl;
         std::cout << a3;
