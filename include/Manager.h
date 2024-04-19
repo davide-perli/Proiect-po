@@ -10,10 +10,12 @@ private:
     std::string numeManager;
     std::string email;
     double salariuLunar;
+    static int numar_angajati; //membru static
 public:
 
     // Constructor implicit
     Manager();
+    ~Manager() override;
 
 
     //Manager(const char* nume, std::string  email, const std::string& telefon, double salariuLunar)
@@ -34,6 +36,8 @@ public:
 
     // Implementarea funcției virtuale pure din clasa de bază
     [[nodiscard]] double calculeazaSalariu() const override;
+
+    static int getNumarAngajati();
 };
 
 #endif //OOP_MANAGER_H

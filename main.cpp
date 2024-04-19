@@ -93,7 +93,7 @@ int main()
 
     //upcasting
     Angajati *ptr = &a3;
-    std::cout << "Salariul anual al angajatului este : "<< ptr->calculeazaSalariu() << std::endl;
+    std::cout << "Salariul anual al angajatului este : "<< ptr -> calculeazaSalariu() << std::endl;
 
     //downcasting
     auto* e = dynamic_cast<AngajatiExtins*>(ptr);
@@ -149,6 +149,8 @@ int main()
     std::cout << "=======================================================================================================================" << std::endl;
     // Afisare informatii despre manager
     std::cout << "Nume manager: " << man.getNumeManager() << std::endl;
+
+    std::cout << "Numarul curent de angajati: " << Manager::getNumarAngajati() << std::endl;
 
     std::cout << "Email: " << man.getEmail() << std::endl;
 
