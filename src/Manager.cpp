@@ -5,7 +5,7 @@
 
 #include "Manager.h"
 
-Manager::Manager() : salariuLunar(0) {}
+Manager::Manager() : Angajati(), salariuLunar(0) {}
 
 void Manager::setNumeManager(const std::string &nume) {
     this->numeManager = nume;
@@ -32,7 +32,6 @@ double Manager::getSalariuLunar() const {
 }
 
 double Manager::calculeazaSalariu() const {
-
     double salariuAnual = salariuLunar * 12;
     return salariuAnual;
 }
