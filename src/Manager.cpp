@@ -5,10 +5,10 @@
 
 #include "Manager.h"
 
-Manager::Manager() : salariuLunar(0) {}
+Manager::Manager() : Angajati(), salariuLunar(0) {}
 
-void Manager::setNumeManager(const std::string &nume) {
-    Angajati::setNume(nume.c_str()); // Accesează membrul nume din clasa de bază Angajati, chipurile aici era problema de suprascriere
+void Manager::setNumeManager(const std::string &manager) {
+    Angajati::setNume(manager.c_str()); // Utilizează numeManager în loc de nume, poate asta rezolva problema din asan windows 2022 msvc 19.38
 }
 
 const std::string &Manager::getNumeManager() const {

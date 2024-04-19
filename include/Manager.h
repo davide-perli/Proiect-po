@@ -20,7 +20,7 @@ public:
 //            : Angajati(nume, telefon), email(std::move(email)), salariuLunar(salariuLunar) {}
 
     //Setteri si getteri
-    void setNumeManager(const std::string& nume);
+    void setNumeManager(const std::string& manager);
 
     [[nodiscard]] const std::string& getNumeManager() const;
 
