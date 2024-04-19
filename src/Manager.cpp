@@ -8,7 +8,7 @@
 Manager::Manager() : Angajati(), salariuLunar(0) {}
 
 void Manager::setNumeManager(const std::string &manager) {
-    Angajati::setNume(manager.c_str()); // Utilizează numeManager în loc de nume, poate asta rezolva problema din asan windows 2022 msvc 19.38
+    this->numeManager = manager;
 }
 
 const std::string &Manager::getNumeManager() const {
@@ -16,7 +16,7 @@ const std::string &Manager::getNumeManager() const {
 }
 
 void Manager::setEmail(const std::string &mail) {
-    this -> email = mail;
+    this->email = mail;
 }
 
 const std::string &Manager::getEmail() const {

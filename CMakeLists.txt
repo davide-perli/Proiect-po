@@ -107,7 +107,8 @@ add_executable(${PROJECT_NAME} main.cpp ${SOURCES}
         include/AngajatiExtins.h
         include/listaComenzi.h
         include/NumarIncorectException.h
-        include/Manager.h)
+        include/Manager.h
+)
 
 ###############################################################################
 
