@@ -108,6 +108,7 @@ add_executable(${PROJECT_NAME} main.cpp ${SOURCES}
         include/listaComenzi.h
         include/NumarIncorectException.h
         include/Manager.h
+        include/salutare.h
 )
 
 ###############################################################################
