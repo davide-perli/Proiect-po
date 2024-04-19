@@ -3,6 +3,7 @@
 //
 #include "Magazin.h"
 #include "Arome.h"
+#include "NumarIncorectException.h"
 #include <iostream>
 
 Magazin::Magazin() {
@@ -28,12 +29,13 @@ std::istream &operator>>(std::istream &is, Magazin &m) {
     std::cout << "10. Bubblegum........................." << std::endl;
     is >> optiuneEnum;
 
+    //try-catch exception
     try {
         if (optiuneEnum < 1 || optiuneEnum > 10) {
-            throw "Numar incorect";
+            throw NumarIncorectException();
         }
-    } catch (const char* err) {
-        std::cout << "Eroare: " << err << std::endl;
+    } catch (const std::exception& err) {
+        std::cout << "Eroare: " << err.what() << std::endl;
     }
 
     std::cout << "Optiunea aleasa este : " << optiuneEnum << std::endl;

@@ -7,8 +7,8 @@
 #include "Client.h"
 #include "Comanda.h"
 #include "Magazin.h"
-#include "Angajati.h"
 #include "AngajatiExtins.h"
+#include "Manager.h"
 #include "listaComenzi.h"
 
 void salutare()
@@ -490,7 +490,42 @@ void salutare()
 //            //if (this->nume != nullptr)//Clang-Tidy: 'if' statement is unnecessary; deleting null pointer has no effect
 //            delete[] this->nume;
 //        }
+
+//      virtual void calculeazaSalariu() = 0;
 //    };
+
+//class AngajatiExtins : public Angajati {
+//private:
+//    double salariuLunar;
+//    int oreLucrate;
+//public:
+//    AngajatiExtins() : Angajati(), salariuLunar(0), oreLucrate(0) {}
+//    AngajatiExtins(const char* nume, const std::string& telefon, double salariuLunar, int oreLucrate)
+//            : Angajati(nume, telefon), salariuLunar(salariuLunar), oreLucrate(oreLucrate) {}
+//
+//    void setSalariuLunar(double salariuLunar) {
+//        this->salariuLunar = salariuLunar;
+//    }
+//
+//    double getSalariuLunar() const {
+//        return salariuLunar;
+//    }
+//
+//    void setOreLucrate(int oreLucrate) {
+//        this->oreLucrate = oreLucrate;
+//    }
+//
+//    int getOreLucrate() const {
+//        return oreLucrate;
+//    }
+//
+//    // Implementarea metodei virtuale pure calculeazaSalariu
+//    void calculeazaSalariu() override {
+//        // Calculul salariului
+//        double salariuAnual = salariuLunar * 12; // presupunem că un angajat lucrează 12 luni pe an
+//        std::cout << "Salariul anual al angajatului este: " << salariuAnual << std::endl;
+//    }
+//};
 
 //    template <typename T> class listaComenzi
 //    {
@@ -584,19 +619,34 @@ void salutare()
 
         //ANGAJATI
         //constructori
-        std::cout << "Clasa angajati: " << std::endl;
+        std::cout << "Clasa Angajati si clasa AngajatiExtins cu mostenire: " << std::endl;
         std::cout << std::endl;
         std::cout << "=======================================================================================================================" << std::endl;
         std::cout << std::endl;
-        Angajati a, a1, a2("Davide", "07243435345");
-        AngajatiExtins a3, angajat("John", "1234567890", 2000, 40);
+        AngajatiExtins a, a3, angajat("John", "1234567890", 2000, 40);
         std::cin >> a3;
-        std::cout << std::endl;
+        std::cout << "\n Salariul anual al angajatului este : " << a3.calculeazaSalariu() <<std::endl;
         std::cout << a3;
+
+        //upcasting
+        Angajati *ptr = &a3;
+        std::cout << "Salariul anual al angajatului este : "<< ptr->calculeazaSalariu() << std::endl;
+
+        //downcasting
+        auto* e = dynamic_cast<AngajatiExtins*>(ptr);
+        if(e){
+            std::cout << std::endl;
+            std::cout<< "Verificare downcast " << e -> calculeazaSalariu() << std::endl;
+        }
+        else{
+            std::cout << std::endl;
+            std::cout << "Downcast esuat" << std::endl;
+        }
+
         std::cout << std::endl;
         std::cout << "=======================================================================================================================" << std::endl;
         std::cout << std::endl;
-        std::cout << a2;
+        std::cout << angajat;
         std::cout << std::endl;
         std::cout << "=======================================================================================================================" << std::endl;
         std::cout << std::endl;
@@ -625,6 +675,26 @@ void salutare()
         std::cout << std::endl;
         std::cout << "=======================================================================================================================" << std::endl;
         std::cout << std::endl;
+
+        Manager man;
+        man.setNumeManager("Davide");
+        man.setEmail("artchanell01@gmail.com");
+        man.setTelefon("0775101171");
+        man.setSalariuLunar(10000);
+        std::cout << "Clasa Manager mostenita din Angajati : " <<  std::endl;
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
+        // Afisare informatii despre manager
+        std::cout << "Nume manager: " << man.getNumeManager() << std::endl;
+
+        std::cout << "Email: " << man.getEmail() << std::endl;
+
+        std::cout << "Salariu lunar: " << man.getSalariuLunar() << std::endl;
+
+        std::cout << "Salariul anual: " << man.calculeazaSalariu() << std::endl;
+
+        std::cout << std::endl;
+        std::cout << "=======================================================================================================================" << std::endl;
 
         //CLIENT
         //constructori

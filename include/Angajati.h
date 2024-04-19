@@ -9,7 +9,7 @@
 
 class Angajati
 {
-private:
+protected:  // Am schimbat accesul la membrii protejați pentru a fi accesibili claselor derivate
     Magazin magazin; // agregare 'has a'
     char* nume;
     std::string telefon;
@@ -39,8 +39,11 @@ public:
 
     [[maybe_unused]] [[nodiscard]] const std::string& getTelefon() const;
 
-    //destructor
-    ~Angajati();
+    //destructor virtual
+    virtual ~Angajati();
+
+    [[nodiscard]] virtual double calculeazaSalariu() const = 0;
+
 };
 
 #endif //OOP_ANGAJATI_H

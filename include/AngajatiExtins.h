@@ -2,11 +2,13 @@
 // Created by Admin on 4/18/2024.
 //
 
+//mostenire 1
 #ifndef OOP_ANGAJATIEXTINS_H
 #define OOP_ANGAJATIEXTINS_H
+#include <iostream>
 #include "Angajati.h"
 
-class AngajatiExtins : public Angajati {
+class AngajatiExtins : virtual public Angajati {
 private:
     double salariu;
     int oreLucrate;
@@ -25,6 +27,7 @@ public:
 
     [[maybe_unused]] [[nodiscard]] int getOreLucrate() const;
 
+    [[nodiscard]] double calculeazaSalariu() const override;
 
     // Suprascrierea operatorului << pentru afișarea informațiilor despre angajați extinși
     friend std::istream& operator>>(std::istream& is, AngajatiExtins& a);

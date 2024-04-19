@@ -105,7 +105,9 @@ add_executable(${PROJECT_NAME} main.cpp ${SOURCES}
         include/Arome.h
         include/Angajati.h
         include/AngajatiExtins.h
-        include/listaComenzi.h)
+        include/listaComenzi.h
+        include/NumarIncorectException.h
+        include/Manager.h)
 
 ###############################################################################
 
@@ -167,6 +169,8 @@ add_executable(
         src/Magazin.cpp
         src/Angajati.cpp
         src/AngajatiExtins.cpp
+        src/NumarIncorectException.cpp
+        src/Manager.cpp
 )
 
 target_link_libraries(
