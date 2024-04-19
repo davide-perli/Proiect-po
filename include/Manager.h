@@ -13,7 +13,7 @@ private:
 public:
 
     // Constructor implicit
-    Manager(); // Apelarea constructorului implicit al clasei de bază și inițializează salariul lunar cu 0
+    Manager();
 
 
     //Manager(const char* nume, std::string  email, const std::string& telefon, double salariuLunar)

@@ -5,7 +5,7 @@
 
 #include "Manager.h"
 
-Manager::Manager() : Angajati(), salariuLunar(0) {}
+Manager::Manager() : salariuLunar(0) {}
 
 void Manager::setNumeManager(const std::string &nume) {
     this->numeManager = nume;
@@ -16,7 +16,7 @@ const std::string &Manager::getNumeManager() const {
 }
 
 void Manager::setEmail(const std::string &mail) {
-    email = mail;
+    this -> email = mail;
 }
 
 const std::string &Manager::getEmail() const {
