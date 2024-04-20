@@ -67,7 +67,7 @@ int main()
     auto* e = dynamic_cast<AngajatiExtins*>(ptr);
     if(e){
         std::cout << std::endl;
-        std::cout<< "Verificare downcast " << e -> calculeazaSalariu() << std::endl;
+        std::cout << "Verificare downcast " << e -> calculeazaSalariu() << std::endl;
     }
     else{
         std::cout << std::endl;
