@@ -108,6 +108,7 @@ int main()
     std::cout << std::endl;
 
     Manager man;
+    /*cod diferenta intre branch uri*/
     man.setNumeManager("Davide");
     man.setEmail("artchanell01@gmail.com");
     man.setTelefon("0775101171");
