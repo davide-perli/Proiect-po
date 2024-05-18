@@ -10,6 +10,7 @@
 #include "Manager.h"
 #include "listaComenzi.h"
 #include "salutare.h"
+#include "Proprietar.h"
 
 int main()
 {
@@ -39,12 +40,31 @@ int main()
 
     //getter/setter:
     std::cout << std::endl;
-    std::cout << "Getter && Setter: "<<std::endl;
+    std::cout << "Getter && Setter: " << std::endl;
 
     m.setArome(Vanilie);
     std::cout << std::endl;
-    std::cout<<m.getArome()<<std::endl;
+    std::cout << m.getArome()<< std::endl;
     std::cout << std::endl;
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << std::endl;
+
+    //Proprietar(implementare singleton design pattern
+    std::cout << std::endl;
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << "Informatii proprietar : " << std::endl;
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << std::endl;
+
+    Proprietar &proprietar = Proprietar::get_instance();
+    proprietar.numeProprietar = "Davide";
+    proprietar.salariu = 10000;
+    proprietar.email = "davideperli@gmail.com";
+
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << "Nume proprietar : " << proprietar.numeProprietar << std::endl;
+    std::cout << "Salariu proprietar : " << proprietar.salariu << std::endl;
+    std::cout << "Email proprietar : " << proprietar.email << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;
     std::cout << std::endl;
 

@@ -109,6 +109,7 @@ add_executable(${PROJECT_NAME} main.cpp ${SOURCES}
         include/NumarIncorectException.h
         include/Manager.h
         include/salutare.h
+        include/Proprietar.h
 )
 
 ###############################################################################
@@ -173,6 +174,7 @@ add_executable(
         src/AngajatiExtins.cpp
         src/NumarIncorectException.cpp
         src/Manager.cpp
+        src/Proprietar.cpp
 )
 
 target_link_libraries(
