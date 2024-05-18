@@ -1,43 +1,28 @@
-//
-// Created by Admin on 4/18/2024.
-//
-
 #ifndef OOP_MAGAZIN_H
 #define OOP_MAGAZIN_H
+
+#include <string>
 #include "Arome.h"
-#include <iostream>
+#include "NumarIncorectException.h"
 
 class Magazin {
-private:
-    Arome arome;
 public:
-
-    //Constructori
-
     explicit Magazin();
 
-    explicit Magazin(Arome arome);
-
-    //supraincarcare << , >>
+    [[maybe_unused]] explicit Magazin(const std::string& arome);
 
     friend std::istream &operator>>(std::istream &is, Magazin &m);
-
-
     friend std::ostream &operator<<(std::ostream &os, const Magazin &m);
 
-    [[maybe_unused]] void setArome(Arome gust);
-
-    static std::string aromeToString(Arome arome);
-
+    void setArome(const std::string& gust);
     [[nodiscard]] std::string getArome() const;
-
-
-
-
-    //destructor
 
     virtual ~Magazin() = default;
 
+private:
+    std::string arome;
+
+    static std::string aromeToString(const std::string& arome);
 };
 
 #endif //OOP_MAGAZIN_H

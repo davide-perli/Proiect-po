@@ -27,7 +27,7 @@ int main()
     std::cout << std::endl;
     std::cout << "Constructor fara parametrii: ";
     std::cout << std::endl;
-    Magazin m,m1,m2(Kinder);
+    Magazin m,m1,m2("Kinder");
     std::cin >> m1;
     std::cout << std::endl;
     std::cout << m1 << std::endl;
@@ -42,7 +42,7 @@ int main()
     std::cout << std::endl;
     std::cout << "Getter && Setter: " << std::endl;
 
-    m.setArome(Vanilie);
+    m.setArome("Vanilie");
     std::cout << std::endl;
     std::cout << m.getArome()<< std::endl;
     std::cout << std::endl;
