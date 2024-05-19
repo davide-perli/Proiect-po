@@ -15,7 +15,7 @@ public:
     listaComenzi() = default;
 
     // Supraincarcare << pentru afisarea listei de obiecte/comenzi;
-    friend std::ostream& operator<<(std::ostream& os, listaComenzi& lc)
+    friend std::ostream& operator<<(std::ostream& os,const listaComenzi& lc)
     {
         for (const auto& elem : lc.lista)
         {
