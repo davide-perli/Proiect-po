@@ -10,6 +10,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <algorithm>
 
 class Arome {
 public:
@@ -27,6 +28,22 @@ public:
                 "Alune",
                 "Bubblegum"
         };
+    }
+
+    // Sorteaza lista de arome in ordine alfabetica  cu algoritm cu functie lambda
+    static void sortareArome() {
+        std::list<std::string> arome = getArome();
+
+        arome.sort([](const std::string& a, const std::string& b) {
+            return a < b;
+        });
+
+        std::cout << "Arome sortate in ordine alfabetica : " << std::endl;
+        int index = 1;
+        for (const auto& aroma : arome) {
+            std::cout << index++ << "." << aroma << "......................................." << std::endl;
+        }
+        std::cout << std::endl;
     }
 };
 

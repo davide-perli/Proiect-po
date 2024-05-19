@@ -9,11 +9,14 @@
 #include "listaComenzi.h"
 #include "salutare.h"
 #include "Proprietar.h"
+#include "Arome.h"
 
 int main()
 {
     //Mesaj de bun venit
     salutare();
+
+    Arome::sortareArome();
 
     unsigned int indexLista, nrObj;
     //MAGAZIN
