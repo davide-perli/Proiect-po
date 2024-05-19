@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
 #include <thread>
 #include "Client.h"
 #include "Comanda.h"

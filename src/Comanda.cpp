@@ -18,12 +18,12 @@ std::istream &operator>>(std::istream &is, Comanda &c) {
     return is;
 }
 
-void Comanda::display(std::ostream &os) {
+void Comanda::display(std::ostream &os) const {
     Client::display(os);
     os << "id-ul comenzii: " << this->idComanda << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &os, Comanda &c) {
+std::ostream &operator<<(std::ostream &os,const Comanda &c) {
     c.display(os);
     return os;
 }

@@ -26,9 +26,9 @@ public:
 
     friend std::istream& operator>>(std::istream& is, Comanda& c);
 
-    void display(std::ostream& os) override;
+    void display(std::ostream& os) const override;
 
-    friend std::ostream& operator<<(std::ostream& os, Comanda& c);
+    friend std::ostream& operator<<(std::ostream& os,const Comanda& c);
 
     //Getters and setters
 

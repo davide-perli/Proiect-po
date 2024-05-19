@@ -46,7 +46,7 @@ public:
 
     friend std::istream& operator>>(std::istream& is, Client& c);
 
-    virtual void display(std::ostream& os);
+    virtual void display(std::ostream& os) const;
 
     friend std::ostream& operator<<(std::ostream& os, Client& c);
 

@@ -45,7 +45,7 @@ std::istream &operator>>(std::istream &is, Client &c) {
     return is;
 }
 
-void Client::display(std::ostream &os) {
+void Client::display(std::ostream &os) const {
     os << "Id-ul comeznii: " << this->idClient << std::endl;
     os << "Pretul comenzii: " << this->pret << std::endl;
 }
