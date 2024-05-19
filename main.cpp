@@ -153,7 +153,7 @@ int main()
     std::cout << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;
     std::cout << std::endl;
-    Client c, c1, c2(100, 799), c3(c2), cEgal;
+    Client c, c1, c2(100, 799), cEgal;
     std::cin >> c1;
     std::cout << std::endl;
     std::cout << c1;
@@ -216,7 +216,7 @@ int main()
 
     // operatorul + supraîncărcat ca funcție non-membră
 
-    int pretTotal = c1[1] + c2[1] + c3[1];
+    int pretTotal = c1[1] + c2[1] + co2[1];
     std::cout << "Pretul total este de: " << pretTotal << std::endl;
     std::cout << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;

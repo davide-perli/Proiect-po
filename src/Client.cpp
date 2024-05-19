@@ -50,7 +50,7 @@ void Client::display(std::ostream &os) const {
     os << "Pretul comenzii: " << this->pret << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &os, Client &c) {
+std::ostream &operator<<(std::ostream &os,const Client &c) {
     c.display(os);
     return os;
 }
