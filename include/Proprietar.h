@@ -10,15 +10,27 @@
 
 class Proprietar
 {
+private:
+    std::string numeProprietar;
+    std::string email;
+    double salariu{};
 
 protected:
     Proprietar() = default; //constructor default in protected ca sa nu fie instantiat in afara clasei
 
 public:
 
-    std::string numeProprietar;
-    std::string email;
-    double salariu{};
+    const std::string &getNumeProprietar() const;
+
+    const std::string &getEmail() const;
+
+    double getSalariu() const;
+
+    void setNumeProprietar(const std::string &numeProprietar);
+
+    void setEmail(const std::string &email_proprietar);
+
+    void setSalariu(double salariu_proprietar);
 
     static Proprietar& get_instance();
 

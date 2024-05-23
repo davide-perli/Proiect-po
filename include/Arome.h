@@ -47,18 +47,4 @@ public:
     }
 };
 
-//enum Arome
-//{
-//    Fistic,
-//    Ciocolata,
-//    Vanilie,
-//    Fructe,
-//    Menta,
-//    Caramel,
-//    Kinder,
-//    Biscuiti,
-//    Alune,
-//    Bubblegum
-//};
-
 #endif //OOP_AROME_H

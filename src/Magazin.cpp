@@ -46,55 +46,12 @@ std::istream &operator>>(std::istream &is, Magazin &m) {
     std::advance(it, optiuneEnum - 1);
     m.arome = *it;
 
-//    if (optiuneEnum == 1) {
-//        m.arome = Fistic;
-//    } else if (optiuneEnum == 2) {
-//        m.arome = Ciocolata;
-//    } else if (optiuneEnum == 3) {
-//        m.arome = Vanilie;
-//    } else if (optiuneEnum == 4) {
-//        m.arome = Fructe;
-//    } else if (optiuneEnum == 5) {
-//        m.arome = Menta;
-//    } else if (optiuneEnum == 6) {
-//        m.arome = Caramel;
-//    } else if (optiuneEnum == 7) {
-//        m.arome = Kinder;
-//    } else if (optiuneEnum == 8) {
-//        m.arome = Biscuiti;
-//    } else if (optiuneEnum == 9) {
-//        m.arome = Alune;
-//    } else if (optiuneEnum == 10) {
-//        m.arome = Bubblegum;
-//    }
     return is;
 }
 
 std::ostream &operator<<(std::ostream &os, const Magazin &m) {
 
     os << "Aroma: " << m.arome << std::endl;
-
-//    if (m.arome == Fistic) {
-//        os << "Aroma: Fistic" << std::endl;
-//    } else if (m.arome == Ciocolata) {
-//        os << "Aroma: Ciocolata" << std::endl;
-//    } else if (m.arome == Vanilie) {
-//        os << "Aroma: Vanilie" << std::endl;
-//    } else if (m.arome == Fructe) {
-//        os << "Aroma: Fructe" << std::endl;
-//    } else if (m.arome == Menta) {
-//        os << "Aroma: Menta" << std::endl;
-//    } else if (m.arome == Caramel) {
-//        os << "Aroma: Caramel" << std::endl;
-//    } else if (m.arome == Kinder) {
-//        os << "Aroma: Kinder" << std::endl;
-//    } else if (m.arome == Biscuiti) {
-//        os << "Aroma: Biscuiti" << std::endl;
-//    } else if (m.arome == Alune) {
-//        os << "Aroma: Alune" << std::endl;
-//    } else if (m.arome == Bubblegum) {
-//        os << "Aroma: Bubblegum" << std::endl;
-//    }
 
     return os;
 }
@@ -103,33 +60,6 @@ void Magazin::setArome(const std::string& gust)// rename arome for Declaration s
 {
     this->arome = gust;
 }
-
-//std::string Magazin::aromeToString(Arome arome) {
-//    switch (arome) {
-//        case Fistic:
-//            return "Fistic";
-//        case Ciocolata:
-//            return "Ciocolata";
-//        case Vanilie:
-//            return "Vanilie";
-//        case Fructe:
-//            return "Fructe";
-//        case Menta:
-//            return "Menta";
-//        case Caramel:
-//            return "Caramel";
-//        case Kinder:
-//            return "Kinder";
-//        case Biscuiti:
-//            return "Biscuiti";
-//        case Alune:
-//            return "Alune";
-//        case Bubblegum:
-//            return "Bubblegum";
-//        default:
-//            return "Unknown";
-//    }
-//}
 
 std::string Magazin::aromeToString(const std::string& arome) {
     return arome;

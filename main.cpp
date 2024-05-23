@@ -58,14 +58,14 @@ int main()
     std::cout << std::endl;
 
     Proprietar &proprietar = Proprietar::get_instance();
-    proprietar.numeProprietar = "Davide";
-    proprietar.salariu = 10000;
-    proprietar.email = "davideperli@gmail.com";
+    proprietar.setNumeProprietar("Davide");
+    proprietar.setSalariu(10000);
+    proprietar.setEmail("perlidavide@gmail.com");
 
     std::cout << "=======================================================================================================================" << std::endl;
-    std::cout << "Nume proprietar : " << proprietar.numeProprietar << std::endl;
-    std::cout << "Salariu proprietar : " << proprietar.salariu << std::endl;
-    std::cout << "Email proprietar : " << proprietar.email << std::endl;
+    std::cout << "Nume proprietar : " << proprietar.getNumeProprietar() << std::endl;
+    std::cout << "Salariu proprietar : " << proprietar.getSalariu() << std::endl;
+    std::cout << "Email proprietar : " << proprietar.getEmail() << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;
     std::cout << std::endl;
 

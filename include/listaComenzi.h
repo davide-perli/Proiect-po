@@ -1,6 +1,6 @@
 // Created by Admin on 4/18/2024.
 //
-
+//e design pattern adaptor
 #ifndef OOP_LISTACOMENZI_H
 #define OOP_LISTACOMENZI_H
 #include <iostream>
