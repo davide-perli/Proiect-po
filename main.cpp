@@ -1,7 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
 #include <thread>
 #include "Client.h"
 #include "Comanda.h"
@@ -10,11 +8,15 @@
 #include "Manager.h"
 #include "listaComenzi.h"
 #include "salutare.h"
+#include "Proprietar.h"
+#include "Arome.h"
 
 int main()
 {
     //Mesaj de bun venit
     salutare();
+
+    Arome::sortareArome();
 
     unsigned int indexLista, nrObj;
     //MAGAZIN
@@ -26,7 +28,7 @@ int main()
     std::cout << std::endl;
     std::cout << "Constructor fara parametrii: ";
     std::cout << std::endl;
-    Magazin m,m1,m2(Kinder);
+    Magazin m,m1,m2("Kinder");
     std::cin >> m1;
     std::cout << std::endl;
     std::cout << m1 << std::endl;
@@ -39,12 +41,31 @@ int main()
 
     //getter/setter:
     std::cout << std::endl;
-    std::cout << "Getter && Setter: "<<std::endl;
+    std::cout << "Getter && Setter: " << std::endl;
 
-    m.setArome(Vanilie);
+    m.setArome("Vanilie");
     std::cout << std::endl;
-    std::cout<<m.getArome()<<std::endl;
+    std::cout << m.getArome()<< std::endl;
     std::cout << std::endl;
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << std::endl;
+
+    //Proprietar(implementare singleton design pattern
+    std::cout << std::endl;
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << "Informatii proprietar : " << std::endl;
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << std::endl;
+
+    Proprietar &proprietar = Proprietar::get_instance();
+    proprietar.setNumeProprietar("Davide");
+    proprietar.setSalariu(10000);
+    proprietar.setEmail("perlidavide@gmail.com");
+
+    std::cout << "=======================================================================================================================" << std::endl;
+    std::cout << "Nume proprietar : " << proprietar.getNumeProprietar() << std::endl;
+    std::cout << "Salariu proprietar : " << proprietar.getSalariu() << std::endl;
+    std::cout << "Email proprietar : " << proprietar.getEmail() << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;
     std::cout << std::endl;
 
@@ -108,7 +129,6 @@ int main()
     std::cout << std::endl;
 
     Manager man;
-    /*cod diferenta intre branch uri*/
     man.setNumeManager("Davide");
     man.setEmail("artchanell01@gmail.com");
     man.setTelefon("0775101171");
@@ -136,7 +156,7 @@ int main()
     std::cout << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;
     std::cout << std::endl;
-    Client c, c1, c2(100, 799), c3(c2), cEgal;
+    Client c, c1, c2(100, 799), cEgal;
     std::cin >> c1;
     std::cout << std::endl;
     std::cout << c1;
@@ -199,7 +219,7 @@ int main()
 
     // operatorul + supraîncărcat ca funcție non-membră
 
-    int pretTotal = c1[1] + c2[1] + c3[1];
+    int pretTotal = c1[1] + c2[1] + co2[1];
     std::cout << "Pretul total este de: " << pretTotal << std::endl;
     std::cout << std::endl;
     std::cout << "=======================================================================================================================" << std::endl;

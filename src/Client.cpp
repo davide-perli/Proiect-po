@@ -45,12 +45,12 @@ std::istream &operator>>(std::istream &is, Client &c) {
     return is;
 }
 
-void Client::display(std::ostream &os) {
+void Client::display(std::ostream &os) const {
     os << "Id-ul comeznii: " << this->idClient << std::endl;
     os << "Pretul comenzii: " << this->pret << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &os, Client &c) {
+std::ostream &operator<<(std::ostream &os,const Client &c) {
     c.display(os);
     return os;
 }

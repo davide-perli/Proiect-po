@@ -1,63 +1,46 @@
-//
 // Created by Admin on 4/18/2024.
 //
-
+// e design pattern adaptor
 #ifndef OOP_LISTACOMENZI_H
 #define OOP_LISTACOMENZI_H
-#include <iostream>
 
-template <typename T> class listaComenzi
-{
+#include <iostream>
+#include <set>
+
+template <typename T>
+class listaComenzi {
 private:
-    std::vector<T>lista;
+    std::set<T> lista; // am schimbat std::list cu std::set
 public:
-    //constructor
+    // constructor
     listaComenzi() = default;
-    //supraincarcare << in STL vector pt afisarea listei de obiecte/comenzi;
-    friend std::ostream& operator<<(std::ostream& os, listaComenzi& lc)
-    {
-        for (auto i = lc.lista.begin(); i != lc.lista.end(); i++)
-        {
-            os << *i;
-            std::cout << std::endl;
+
+    // Supraincarcare << pentru afisarea listei de obiecte/comenzi;
+    friend std::ostream& operator<<(std::ostream& os, const listaComenzi& lc) {
+        for (const auto& elem : lc.lista) {
+            os << elem << std::endl;
         }
         return os;
     }
 
-    //supraincarcare +=; -=
-
-    listaComenzi& operator+=(const T& comanda)
-    {
-        lista.push_back(comanda);
+    // Supraincarcare += pentru adăugarea unei comenzi
+    listaComenzi& operator+=(const T& comanda) {
+        lista.insert(comanda);
         return *this;
     }
 
-    listaComenzi& operator-=(const T& comanda)
-    {
-        auto i = find(lista.begin(), lista.end(), comanda);
-        if (i != lista.end()) {
-            lista.erase(i);
-        }
+    // Supraincarcare -= pentru eliminarea unei comenzi
+    listaComenzi& operator-=(const T& comanda) {
+        lista.erase(comanda);
         return *this;
     }
 
-
-    // Supraincarcarea operatorului [], pentru citirea unui element din vector de la o pozitie data
-    T& operator [](size_t index)
-    {
-        if (index < lista.size())
-        {
-            return lista[index];
-        }
-        else
-        {
-            std::cout << "Index out of bounds";
-            static T defaultObject;
-            return defaultObject;
-        }
+    // Supraincarcarea operatorului [] pentru citirea unui element de la o anumită poziție
+    T operator[](size_t index) const {
+        auto it = lista.begin();
+        std::advance(it, index);
+        return *it;
     }
-
-
 };
 
-#endif //OOP_LISTACOMENZI_H
+#endif // OOP_LISTACOMENZI_H

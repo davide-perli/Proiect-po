@@ -1,9 +1,6 @@
-
-#include "Client.h"
 #include "Comanda.h"
 
-Comanda::Comanda() : Client()
-{
+Comanda::Comanda() : Client() {
     this->idComanda = 0;
 }
 
@@ -18,18 +15,17 @@ std::istream &operator>>(std::istream &is, Comanda &c) {
     return is;
 }
 
-void Comanda::display(std::ostream &os) {
+void Comanda::display(std::ostream &os) const {
     Client::display(os);
     os << "id-ul comenzii: " << this->idComanda << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &os, Comanda &c) {
+std::ostream &operator<<(std::ostream &os, const Comanda &c) {
     c.display(os);
     return os;
 }
 
-void Comanda::setIdComanda(short i)//rename idComanda for Declaration shadows a field of 'Comanda' warning
-{
+void Comanda::setIdComanda(short i) {
     this->idComanda = i;
 }
 
@@ -39,4 +35,8 @@ short Comanda::getIdComanda() const {
 
 bool Comanda::operator==(const Comanda &other) const {
     return this->idComanda == other.idComanda;
+}
+
+bool Comanda::operator<(const Comanda &other) const {
+    return this->idComanda < other.idComanda;
 }
